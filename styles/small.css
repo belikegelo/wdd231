@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #7251A6;
+    --secondary: #9B85C4;
+    --accent: #B69AE8;
+
+    --dark: #24202D;
+    --text: #514B5C;
+    --muted: #898293;
+
+    --background: #F7F5FA;
+    --surface: #FFFFFF;
+    --surface-alt: #F0EBF7;
+
+    --border: #E3DCEB;
+
+    --font-heading: "Montserrat", sans-serif;
+    --font-body: "Inter", sans-serif;
+}
+
+
+header {}
+
+
+
+nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+}
+
+nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.5rem 1rem 1rem;
+    list-style: none;
+    background-color: var(--dark);
+}
+
+nav ul.active {
+    display: flex;
+}
+
+nav a {
+    display: block;
+    padding: 0.65rem 1rem;
+    color: var(--surface);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    background-color: var(--primary);
+}
+
+.hamburger {
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: var(--surface);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
